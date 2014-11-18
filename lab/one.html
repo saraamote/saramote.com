@@ -1,0 +1,53 @@
+<style>
+
+  body {
+
+    background: pink;
+
+  }
+
+  .ball {
+
+    position: absolute;
+    background: pink;
+    height: 100px;
+    width: 100px;
+    border-radius: 100%;
+    -webkit-animation:bounce 12s linear 1, left 13s 1;
+
+  }
+
+  @-webkit-keyframes bounce {
+
+    0% { bottom: 120% }
+    10% { bottom: 0; width: 100px; height: 100px;background: grey;}
+    12% { bottom: 0; width: 110px; height: 50px; background: grey;}
+    15% { bottom: 0; width: 100px; height: 100px; background: grey;}
+    30% { bottom: 90%; background: grey;}
+    40% { bottom: 0; width: 100px; height: 100px;background: grey;}
+    42% { bottom: 0; width: 110px; height: 50px; background: grey;}
+    45% { bottom: 0; width: 100px; height: 100px; background: grey;}
+    60% { bottom: 60%; background: grey;}
+    70% { bottom: 0; background: grey;}
+    90% { bottom: 30%; background: grey;}
+    100% {bottom: -20%; background: grey;}
+
+  }
+
+  @-webkit-keyframes left {
+
+    from {left: 0}
+    to {left: 60%}
+
+  }
+
+</style>
+
+<div class="container">
+
+  <div class="ball">
+
+  </div>
+
+
+</div>

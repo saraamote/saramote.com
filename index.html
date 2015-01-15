@@ -6,7 +6,7 @@
 
     <title>
 
-      Sara Mote &amp; Co | A web design and development studio based in Venice Beach, California
+      Sara Mote | Web Developer &amp; Interaction Designer | Venice Beach, California
 
     </title>
 
@@ -25,14 +25,14 @@
       body {
 
         font-family: 'garamond-premier-pro-display';
-        margin: 18% 12% 0 12%;
         font-size: 0;
+        margin: 0;
 
       }
 
-      .wrapper {
+      .intro {
 
-        /*background-color: #eee;*/
+        margin: 18% 12% 0 12%;
 
       }
 
@@ -61,7 +61,7 @@
 
       }
 
-      img {
+      .intro img {
 
         border-radius: 100%;
         height: 50%;
@@ -87,7 +87,7 @@
 
       a {
 
-        /*border-bottom: 1px solid #eee;*/
+        border-bottom: 1px solid #eee;
         font-style: italic;
         text-decoration: none;
         color: #000;
@@ -95,22 +95,50 @@
 
       }
 
+      .portfolio {
+
+        position: relative;
+        overflow: hidden;
+        margin: 12.5% 0;
+
+      }
+
+      .portfolio img {
+
+        transform: translateX( 100% );
+        width: 62.5%;
+
+      }
+
+      .portfolio h1 {
+
+        font: 100 italic 1.25rem 'garamond-premier-pro-display';
+        letter-spacing: 0.025em;
+        word-spacing: .075em;
+        font-weight: 500;
+
+        position: absolute;
+        top: 33.3%;
+        left: 12%;
+
+      }
+
       /* */
       @media (min-width: 650px) {
 
-        .image {
+        .intro .image {
 
           width: 37.5%;
 
         }
 
-        .paragraph {
+        .intro .paragraph {
 
           width: 62.5%;
 
         }
 
-        img {
+        .intro img {
 
           height: 50%;
           width: 50%;
@@ -125,19 +153,31 @@
 
   <body>
 
-    <div class="wrapper">
+    <div class="intro">
 
       <figure class="image">
 
-        <img src="sara-mote.jpg">
+        <img src="images/sara-mote.jpg">
 
       </figure>
 
       <p class="paragraph">
 
-        <em>Sara Mote &amp; Co</em> is a web design and development studio based out of sunny Venice Beach, California, lead by seasoned retail and e-commerce veteran, Sara Mote. We specialize in building state of the art online experiences and offer consultation services to help brands maximize the revenue generated from their web presence. Our clients include <strong>Smashbox</strong>, <strong>Raquel Allegra</strong>, <strong>Undefeated</strong>, <strong>Civilianaire</strong>, <strong>Jenni Kayne</strong> and many more. Contact us at <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#104;&#101;&#108;&#108;&#111;&#64;&#115;&#97;&#114;&#97;&#109;&#111;&#116;&#101;&#46;&#99;&#111;&#109;">&#104;&#101;&#108;&#108;&#111;&#64;&#115;&#97;&#114;&#97;&#109;&#111;&#116;&#101;&#46;&#99;&#111;&#109;</a>
+        I am a front end web developer and interaction designer currently living and working in Venice Beach, Califoria. Specialized in building user friendly, immersive, and engaging marketing, business, and e-commerce solutions. My clients range from Fortune 500 companies to disruptive startups. Contact me at <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#104;&#101;&#108;&#108;&#111;&#64;&#115;&#97;&#114;&#97;&#109;&#111;&#116;&#101;&#46;&#99;&#111;&#109;">&#104;&#101;&#108;&#108;&#111;&#64;&#115;&#97;&#114;&#97;&#109;&#111;&#116;&#101;&#46;&#99;&#111;&#109;</a>
 
       </p>
+
+    </div>
+
+    <div class="portfolio">
+
+      <h1>
+
+        Angela Manuel Davis
+
+      </h1>
+
+      <img src="images/saramote-angeladavis.jpg">
 
     </div>
 

@@ -105,13 +105,45 @@
 
       .portfolio img {
 
-        -webkit-transform: translateX( 100% );
-        transform: translateX( 100% );
+        z-index: 1;
+
+      }
+
+      .portfolio img {
+
         width: 62.5%;
 
       }
 
+      .portfolio.amd img {
+
+        -webkit-transform: translateX( 100% );
+        transform: translateX( 100% );
+
+      }
+
+      .portfolio.tmg img {
+
+        -webkit-transform: translateX( 52.5% );
+        transform: translateX( 52.5% );
+        width: 80%;
+
+      }
+
+      .portfolio.ks img {
+
+        -webkit-transform: translateX( -7.5% );
+        transform: translateX( -7.5% );
+
+      }
+
       .portfolio h1 {
+
+        max-width: 25%;
+
+      }
+
+      .portfolio.left h1 {
 
         font: 100 italic 1.25rem 'garamond-premier-pro-display';
         letter-spacing: 0.025em;
@@ -119,12 +151,28 @@
         font-weight: 500;
 
         position: absolute;
+        text-align: left;
         top: 33.3%;
         left: 12%;
 
       }
 
-      /* */
+      .portfolio.right h1 {
+
+        font: 100 italic 1.25rem 'garamond-premier-pro-display';
+        letter-spacing: 0.025em;
+        word-spacing: .075em;
+        font-weight: 500;
+
+        position: absolute;
+        text-align: right;
+        top: 33.3%;
+        right: 12%;
+
+      }
+
+      /* dt */
+
       @media (min-width: 650px) {
 
         .intro .image {
@@ -170,7 +218,7 @@
 
     </div>
 
-    <div class="portfolio">
+    <div class="portfolio left amd">
 
       <h1>
 
@@ -179,6 +227,30 @@
       </h1>
 
       <img src="images/saramote-angeladavis.jpg">
+
+    </div>
+
+    <div class="portfolio right ks">
+
+      <img src="images/saramote-klurskin.jpg">
+
+      <h1>
+
+        Klurskin Skincare
+
+      </h1>
+
+    </div>
+
+    <div class="portfolio tmg left">
+
+      <h1>
+
+        Tomlinson Management Group
+
+      </h1>
+
+      <img src="images/saramote-tmg.jpg">
 
     </div>
 

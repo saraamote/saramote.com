@@ -31,9 +31,11 @@
 
       }
 
-      section {
+      /* intro */
 
-        margin: 18% 12% 0 12%;
+      section:nth-of-type(1) {
+
+        margin: 18% 12% 6% 12%;
 
       }
 
@@ -48,7 +50,7 @@
 
       }
 
-      section p {
+      section:nth-of-type(1) p {
 
         vertical-align: top;
         /*background-color: #ccc;*/
@@ -62,7 +64,7 @@
 
       }
 
-      section img {
+      section:nth-of-type(1) img {
 
         border-radius: 100%;
         height: 50%;
@@ -96,12 +98,23 @@
 
       }
 
+      /* portfolio */
+
+      section:nth-of-type(2) {
+
+        overflow: hidden;
+        margin: 9% 0;
+        width: 100%;
+
+      }
+
       article {
 
         position: relative;
         overflow: hidden;
         min-height: 50vw;
         margin: 12.5% 0;
+        overflow: visible;
         width: 100%;
 
       }
@@ -110,9 +123,8 @@
 
         position: absolute;
         width: 62.5%;
-        z-index: 1;
+        z-index: 0;
         top: 0;
-
 
       }
 
@@ -150,34 +162,27 @@
 
       article h1 {
 
-        max-width: 25%;
+        font: 500 italic 1.25rem 'garamond-premier-pro-display';
+        letter-spacing: 0.025em;
+        word-spacing: .075em;
+        max-width: 15%;
+        z-index: 2;
+
+        position: absolute;
+        top: 33.3%;
 
       }
 
       .left h1 {
 
-        font: 100 italic 1.25rem 'garamond-premier-pro-display';
-        letter-spacing: 0.025em;
-        word-spacing: .075em;
-        font-weight: 500;
-
-        position: absolute;
         text-align: left;
-        top: 33.3%;
         left: 12%;
 
       }
 
       .right h1 {
 
-        font: 100 italic 1.25rem 'garamond-premier-pro-display';
-        letter-spacing: 0.025em;
-        word-spacing: .075em;
-        font-weight: 500;
-
-        position: absolute;
         text-align: right;
-        top: 33.3%;
         right: 12%;
 
       }
@@ -186,19 +191,19 @@
 
       @media (min-width: 650px) {
 
-        section .image {
+        section:nth-of-type(1) .image {
 
           width: 37.5%;
 
         }
 
-        section p {
+        section:nth-of-type(1) p {
 
           width: 62.5%;
 
         }
 
-        section img {
+        section:nth-of-type(1) img {
 
           height: 50%;
           width: 50%;
@@ -212,6 +217,8 @@
   </head>
 
   <body>
+
+    <!-- intro -->
 
     <section>
 
@@ -231,7 +238,11 @@
 
     </section>
 
-    <article class="portfolio parallax left amd">
+    <!-- portfolio -->
+
+    <section>
+
+      <article class="parallax left amd">
 
       <h1>
 
@@ -243,7 +254,7 @@
 
     </article>
 
-    <article class="portfolio parallax right civ">
+      <article class="parallax right civ">
 
       <img src="images/saramote-civilianaire.jpg">
 
@@ -255,7 +266,7 @@
 
     </article>
 
-    <article class="portfolio parallax left heist">
+      <article class="parallax left heist">
 
       <img src="images/saramote-heist.jpg">
 
@@ -267,7 +278,7 @@
 
     </article>
 
-    <article class="portfolio parallax right ks">
+      <article class="parallax right ks">
 
       <img src="images/saramote-klurskin-showcase.jpg">
 
@@ -279,7 +290,7 @@
 
     </article>
 
-    <article class="portfolio parallax tmg left">
+      <article class="parallax left tmg">
 
       <h1>
 
@@ -291,38 +302,62 @@
 
     </article>
 
+    </section>
+
   </body>
 
 </html>
 
 <script>
 
-  function step( timestamp ) {
+  /**/
 
-    var images = document.querySelectorAll( '.parallax' );
+  /* Parallax */
 
-    for ( var image = 0; image < images.length; image++ ) {
+var elements, element, scroll;
 
-      /*console.log ( window.scrollY, images[ image ].getBoundingClientRect().top );*/
+function step() {
 
-      if( window.scrollY > images[ image ].offsetTop && window.scrollY < images[ image ].offsetTop + images[ image ].offsetHeight ) {
+  elements = document.querySelectorAll( '.parallax' );
 
-        console.log( images[ image ].getElementsByTagName( 'h1' )[ 0 ].innerHTML , 'in view' );
+  scroll = window.scrollY;
 
-        console.log( window.scrollY - images[ image ].offsetTop );
+  for( var index = 0; index < elements.length; index++ ) {
 
-        var distance = window.scrollY - images[ image ].offsetTop;
+    element = elements[ index ];
 
-        images[ image ].getElementsByTagName( 'img' )[ 0 ].style.webkitTransform = 'translateY(-' + distance + 'px)';
+    var top = element.offsetTop;
 
-      }
+    var height = element.offsetHeight;
+
+    var image = element.getElementsByTagName( 'img' )[ 0 ];
+
+    if( scroll > top - height && scroll < top + height ) {
+
+      var distance = top - scroll;
+
+      image.style.webkitTransform = 'translateY(' + distance + 'px)';
 
     }
 
-    window.requestAnimationFrame( step );
+    if( top > scroll + height ) {
+
+      image.style.webkitTransform = 'translateY(' + height + 'px)';
+
+    }
+
+    if( top + height < scroll ) {
+
+      image.style.webkitTransform = 'translateY(-' + height + 'px)';
+
+    }
 
   }
 
   window.requestAnimationFrame( step );
+
+}
+
+window.requestAnimationFrame( step );
 
 </script>

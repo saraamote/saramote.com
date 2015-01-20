@@ -22,6 +22,7 @@
 
     <style>
 
+
       body {
 
         font-family: 'garamond-premier-pro-display';
@@ -95,71 +96,65 @@
 
       }
 
-      .portfolio {
+      article {
 
         position: relative;
         overflow: hidden;
+        min-height: 50vw;
         margin: 12.5% 0;
+        width: 100%;
 
       }
 
-      .portfolio img {
+      article img {
 
-        z-index: 1;
-
-      }
-
-      .portfolio img {
-
+        position: absolute;
         width: 62.5%;
+        z-index: 1;
+        top: 0;
+
 
       }
 
-      .portfolio.amd img {
+      .amd img {
 
-        -webkit-transform: translateX( 85% );
-        transform: translateX( 85% );
+        right: -5%;
 
       }
 
-      .portfolio.civ img {
+      .civ img {
 
-        -webkit-transform: translateX( -15% );
-        transform: translateX( -15% );
+        left: -15%;
+        width: 75%;
+
+      }
+
+      .heist img {
+
+        right: -12.5%;
+
+      }
+
+      .ks img {
+
+        left: -2.5%;
+
+      }
+
+      .tmg img {
+
+        right: -10%;
         width: 80%;
 
       }
 
-      .portfolio.heist img {
-
-        -webkit-transform: translateX( 80% );
-        transform: translateX( 80% );
-        left: 0;
-
-      }
-
-      .portfolio.tmg img {
-
-        -webkit-transform: translateX( 52.5% );
-        transform: translateX( 52.5% );
-        width: 80%;
-
-      }
-
-      .portfolio.ks img {
-
-        -webkit-transform: translateX( -7.5% );
-        transform: translateX( -7.5% );
-
-      }
-
-      .portfolio h1 {
+      article h1 {
 
         max-width: 25%;
 
       }
 
-      .portfolio.left h1 {
+      .left h1 {
 
         font: 100 italic 1.25rem 'garamond-premier-pro-display';
         letter-spacing: 0.025em;
@@ -173,7 +168,7 @@
 
       }
 
-      .portfolio.right h1 {
+      .right h1 {
 
         font: 100 italic 1.25rem 'garamond-premier-pro-display';
         letter-spacing: 0.025em;
@@ -236,7 +231,7 @@
 
     </section>
 
-    <div class="portfolio left amd">
+    <article class="portfolio parallax left amd">
 
       <h1>
 
@@ -244,11 +239,11 @@
 
       </h1>
 
-      <img class="parallax" src="images/saramote-angeladavis.jpg">
+      <img src="images/saramote-angeladavis.jpg">
 
-    </div>
+    </article>
 
-    <div class="portfolio right civ">
+    <article class="portfolio parallax right civ">
 
       <img src="images/saramote-civilianaire.jpg">
 
@@ -258,11 +253,11 @@
 
       </h1>
 
-    </div>
+    </article>
 
-    <div class="portfolio left heist">
+    <article class="portfolio parallax left heist">
 
-      <img class="parallax" src="images/saramote-heist.jpg">
+      <img src="images/saramote-heist.jpg">
 
       <h1>
 
@@ -270,11 +265,11 @@
 
       </h1>
 
-    </div>
+    </article>
 
-    <div class="portfolio right ks">
+    <article class="portfolio parallax right ks">
 
-      <img class="parallax" src="images/saramote-klurskin-showcase.jpg">
+      <img src="images/saramote-klurskin-showcase.jpg">
 
       <h1>
 
@@ -282,9 +277,9 @@
 
       </h1>
 
-    </div>
+    </article>
 
-    <div class="portfolio tmg left">
+    <article class="portfolio parallax tmg left">
 
       <h1>
 
@@ -292,9 +287,9 @@
 
       </h1>
 
-      <img class="parallax" src="images/saramote-tmg.jpg">
+      <img src="images/saramote-tmg.jpg">
 
-    </div>
+    </article>
 
   </body>
 
@@ -308,7 +303,19 @@
 
     for ( var image = 0; image < images.length; image++ ) {
 
-      console.log ( window.scrollY, images[ image ].getBoundingClientRect().top );
+      /*console.log ( window.scrollY, images[ image ].getBoundingClientRect().top );*/
+
+      if( window.scrollY > images[ image ].offsetTop && window.scrollY < images[ image ].offsetTop + images[ image ].offsetHeight ) {
+
+        console.log( images[ image ].getElementsByTagName( 'h1' )[ 0 ].innerHTML , 'in view' );
+
+        console.log( window.scrollY - images[ image ].offsetTop );
+
+        var distance = window.scrollY - images[ image ].offsetTop;
+
+        images[ image ].getElementsByTagName( 'img' )[ 0 ].style.webkitTransform = 'translateY(-' + distance + 'px)';
+
+      }
 
     }
 

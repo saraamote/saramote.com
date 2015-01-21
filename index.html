@@ -14,6 +14,8 @@
 
     <script src="//use.typekit.net/wdu8omn.js"></script>
 
+    <link rel="stylesheet" type="text/css" href="//cloud.typography.com/7425932/664066/css/fonts.css">
+
     <script>
 
       try{Typekit.load();}catch(e){}
@@ -33,7 +35,7 @@
 
       /* intro */
 
-      section:nth-of-type(1) {
+      section:nth-of-type( 1 ) {
 
         margin: 18% 12% 6% 12%;
 
@@ -50,7 +52,7 @@
 
       }
 
-      section:nth-of-type(1) p {
+      section:nth-of-type( 1 ) p {
 
         vertical-align: top;
         /*background-color: #ccc;*/
@@ -58,13 +60,21 @@
         width: 100%;
         margin: 0;
 
-        font: 100 normal 18px/1.67 'garamond-premier-pro-display';
+        font: 100 normal 19px/1.75 'garamond-premier-pro-display';
         letter-spacing: 0.01em;
         word-spacing: .075em;
 
       }
 
-      section:nth-of-type(1) img {
+      .gotham {
+
+
+        font: 300 normal 16px/2 'Gotham SSm A', 'Gotham SSm B';
+        text-transform: uppercase;
+
+      }
+
+      section:nth-of-type( 1 ) img {
 
         border-radius: 100%;
         height: 50%;
@@ -100,7 +110,7 @@
 
       /* portfolio */
 
-      section:nth-of-type(2) {
+      section:nth-of-type( 2 ) {
 
         padding: 6.25% 0 50% 0;
         overflow: hidden;
@@ -202,6 +212,61 @@
 
       }
 
+      /* logo */
+
+      .logo {
+
+        width: 70px;
+        margin: 70px auto;
+
+      }
+
+      .logo p {
+
+        font: 500 normal 12px/1.65 'Gotham SSm A', 'Gotham SSm B';
+        text-transform: uppercase;
+        text-align: center;
+        color: #ffdecb;
+        padding: 0;
+        margin: 0;
+
+      }
+
+      .logo p:nth-child( 1 ),
+      .logo p:nth-child( 2 ),
+      .logo p:nth-child( 3 ),
+      .logo p:nth-child( 6 ),
+      .logo p:nth-child( 7 ),
+      .logo p:nth-child( 8 ){
+
+        display: inline-block;
+        width: 33.3%;
+
+      }
+
+      .logo p:nth-child( 4 ),
+      .logo p:nth-child( 5 ) {
+
+        display: inline-block;
+        width: 40%;
+
+      }
+
+      .logo p:nth-child( 4 ) {
+
+        margin-left: 10%;
+
+      }
+
+      .logo p:nth-child( 5 ) {
+
+        margin-right: 10%;
+
+      }
+
+
+
+
       /* dt */
 
       @media (min-width: 650px) {
@@ -222,12 +287,6 @@
 
           height: 50%;
           width: 50%;
-
-        }
-
-        section:nth-of-type(2) {
-
-          padding: 12.5% 0;
 
         }
 
@@ -279,7 +338,7 @@
 
       <article class="parallax left amd">
 
-        <h1>
+        <h1 class="gotham">
 
           Angela Manuel Davis
 
@@ -360,6 +419,19 @@
         <img src="images/saramote-tmg.jpg">
 
       </article>
+
+    </section>
+
+    <section class="logo">
+
+      <p>s</p>
+      <p>a</p>
+      <p>r</p>
+      <p>a</p>
+      <p>m</p>
+      <p>o</p>
+      <p>t</p>
+      <p>e</p>
 
     </section>
 

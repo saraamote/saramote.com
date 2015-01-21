@@ -129,7 +129,15 @@
 
       .amd img {
 
-        right: -42.5%;
+        right: -22.5%;
+        width: 85%;
+
+      }
+
+      .ever img {
+
+        left: -13.5%;
+        width: 85%;
 
       }
 
@@ -163,7 +171,7 @@
 
       .heist img {
 
-        left: -17.5%;
+        right: -50.5%;
 
       }
 
@@ -277,7 +285,31 @@
 
         </h1>
 
-        <img src="images/saramote-angeladavis.jpg">
+        <img src="images/saramote-angeladavis-sc.jpg">
+
+      </article>
+
+      <article class="parallax right ever">
+
+        <img src="images/saramote-ever.jpg">
+
+        <h1>
+
+          Ever
+
+        </h1>
+
+      </article>
+
+      <article class="parallax left heist">
+
+        <img src="images/saramote-heist.jpg">
+
+        <h1>
+
+          Heist
+
+        </h1>
 
       </article>
 
@@ -329,18 +361,6 @@
 
       </article>
 
-      <article class="parallax right heist">
-
-        <img src="images/saramote-heist.jpg">
-
-        <h1>
-
-          Heist
-
-        </h1>
-
-      </article>
-
     </section>
 
   </body>
@@ -357,37 +377,44 @@ var elements, element, scroll;
 
 function step() {
 
-  elements = document.querySelectorAll( '.parallax' );
+  if ( window.innerHeight < window.innerWidth ) {
 
-  scroll = window.scrollY;
+    elements = document.querySelectorAll( '.parallax' );
 
-  for( var index = 0; index < elements.length; index++ ) {
+    scroll = window.scrollY;
 
-    element = elements[ index ];
+    for( var index = 0; index < elements.length; index++ ) {
 
-    var top = element.offsetTop;
+      element = elements[ index ];
 
-    var height = element.offsetHeight;
+      var top = element.offsetTop;
 
-    var image = element.getElementsByTagName( 'img' )[ 0 ];
+      var height = element.offsetHeight;
 
-    if( scroll > top - height && scroll < top + height ) {
+      var image = element.getElementsByTagName( 'img' )[ 0 ];
 
-      var distance = top - scroll;
+      if( scroll > top - height && scroll < top + height ) {
 
-      image.style.webkitTransform = 'translateY(' + distance + 'px)';
+        var distance = top - scroll;
 
-    }
+        image.style.webkitTransform = 'translateY(' + distance + 'px)';
+        image.style.transform = 'translateY(' + distance + 'px)';
 
-    if( top > scroll + height ) {
+      }
 
-      image.style.webkitTransform = 'translateY(' + height + 'px)';
+      if( top > scroll + height ) {
 
-    }
+        image.style.webkitTransform = 'translateY(' + height + 'px)';
+        image.style.transform = 'translateY(' + height + 'px)';
 
-    if( top + height < scroll ) {
+      }
 
-      image.style.webkitTransform = 'translateY(-' + height + 'px)';
+      if( top + height < scroll ) {
+
+        image.style.webkitTransform = 'translateY(-' + height + 'px)';
+        image.style.transform = 'translateY(-' + height + 'px)';
+
+      }
 
     }
 

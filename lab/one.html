@@ -22,11 +22,162 @@
 
     <style>
 
-    body {
+      body {
 
-      color: black;
+        font: italic 10px 'garamond-premier-pro-display';
+        text-rendering: geometricPrecision;
+        color: rgba( 0 , 0 , 0 , 1 );
+        padding: 2.5%;
+        margin: 0;
+
+      }
+
+      .playground {
+
+      box-shadow: 0 2px 5px 0 rgba( 0 , 0 , 0 , 0.26 ),
+            0 2px 10px 0 rgba( 0 , 0 , 0 , 0.16 );
+      position: relative;
+      height: 100%;
+      width: 100%;
+      z-index: 1;
+
+      }
+
+      h1 {
+
+        font-size: 5.5em;
+        padding: 2.5em;
+
+      }
+
+    .ball {
+
+      -webkit-animation: bounce-it 6s linear 1,
+      move-it 6s linear 1;
+
+      -ms-animation: bounce-it 6s linear 1,
+      move-it 6s linear 1;
+
+      -o-animation: bounce-it 6s linear 1,
+      move-it 6s linear 1;
+
+      animation: bounce-it 6s linear 1,
+      move-it 6s linear 1;
+
+      border-radius:100%;
+      position:absolute;
+      height: 80px;
+      width: 80px;
 
     }
+
+    @-webkit-keyframes move-it {
+
+      0%   { left: 0; }
+      100% { left: 60%; }
+
+    }
+
+
+    @-ms-keyframes move-it {
+
+      0%   { left: 0; }
+      100% { left: 60%; }
+
+    }
+
+    @-o-keyframes move-it {
+
+      0%   { left: 0; }
+      100% { left: 60%; }
+
+    }
+
+    @keyframes move-it {
+
+      0%   { left: 0; }
+      100% { left: 60%; }
+
+    }
+
+    @-webkit-keyframes bounce-it {
+
+      0%    { bottom: 100%; background: rgba( 255 , 182 , 193 , 1 ); }
+      24.5% { bottom: 0; width: 80px; height: 80px; }
+      28%   { bottom: 0; width: 85px; height: 40px; }
+      32.5% { bottom: 0; width: 80px; height: 80px; }
+      53%   { bottom: 60%; }
+      74%   { bottom: 0; width: 80px; height: 80px; }
+      76%   { bottom: 0; width: 85px; height: 40px; }
+      80%   { bottom: 0; width: 80px; height: 80px; }
+      87.5% { bottom: 17.5%; }
+      100%  { bottom: -10%; width: 80px; height: 80px; background: rgba( 255 , 182 , 193 , 1 ); }
+
+    }
+
+    @-moz-keyframes bounce-it {
+
+      0%    { bottom: 100%; background: rgba( 255 , 182 , 193 , 1 ); }
+      24.5% { bottom: 0; width: 80px; height: 80px; }
+      28%   { bottom: 0; width: 85px; height: 40px; }
+      32.5% { bottom: 0; width: 80px; height: 80px; }
+      53%   { bottom: 60%; }
+      74%   { bottom: 0; width: 80px; height: 80px; }
+      76%   { bottom: 0; width: 85px; height: 40px; }
+      80%   { bottom: 0; width: 80px; height: 80px; }
+      87.5% { bottom: 17.5%; }
+      100%  { bottom: -10%; width: 80px; height: 80px; background: rgba( 255 , 182 , 193 , 1 ); }
+
+    }
+
+    @-ms-keyframes bounce-it {
+
+      0%    { bottom: 100%; background: rgba( 255 , 182 , 193 , 1 ); }
+      24.5% { bottom: 0; width: 80px; height: 80px; }
+      28%   { bottom: 0; width: 85px; height: 40px; }
+      32.5% { bottom: 0; width: 80px; height: 80px; }
+      53%   { bottom: 60%; }
+      74%   { bottom: 0; width: 80px; height: 80px; }
+      76%   { bottom: 0; width: 85px; height: 40px; }
+      80%   { bottom: 0; width: 80px; height: 80px; }
+      87.5% { bottom: 17.5%; }
+      100%  { bottom: -10%; width: 80px; height: 80px; background: rgba( 255 , 182 , 193 , 1 ); }
+
+    }
+
+    @-o-keyframes bounce-it {
+
+      0%    { bottom: 100%; background: rgba( 255 , 182 , 193 , 1 ); }
+      24.5% { bottom: 0; width: 80px; height: 80px; }
+      28%   { bottom: 0; width: 85px; height: 40px; }
+      32.5% { bottom: 0; width: 80px; height: 80px; }
+      53%   { bottom: 60%; }
+      74%   { bottom: 0; width: 80px; height: 80px; }
+      76%   { bottom: 0; width: 85px; height: 40px; }
+      80%   { bottom: 0; width: 80px; height: 80px; }
+      87.5% { bottom: 17.5%; }
+      100%  { bottom: -10%; width: 80px; height: 80px; background: rgba( 255 , 182 , 193 , 1 ); }
+
+    }
+
+    @keyframes bounce-it {
+
+      0%    { bottom: 100%; background: rgba( 255 , 182 , 193 , 1 ); }
+      24.5% { bottom: 0; width: 80px; height: 80px; }
+      26%   { }
+      28%   { bottom: 0; width: 85px; height: 40px; }
+      32.5% { bottom: 0; width: 80px; height: 80px; }
+      35%   { }
+      53%   { bottom: 60%; }
+      74%   { bottom: 0; width: 80px; height: 80px; }
+      76%   { bottom: 0; width: 85px; height: 40px; }
+      80%   { bottom: 0; width: 80px; height: 80px; }
+      87.5% { bottom: 17.5%; }
+      100%  { bottom: -10%; width: 80px; height: 80px; background: rgba( 255 , 182 , 193 , 1 ); }
+
+    }
+
+
 
     </style>
 
@@ -34,6 +185,13 @@
 
   <body>
 
+    <div class="playground">
+
+      <h1>Can ya can ya can ya bounce wit me, bounce wit me... </h1>
+
+      <div class="ball"></div>
+
+    </div>
 
   </body>
 
